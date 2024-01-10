@@ -1,0 +1,14 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: cimg/openjdk:17.0
+      - image: cimg/mysql:8.0
+      - image: grokzen/redis-cluster:6.2.8
+      - image: timescale/timescaledb:latest-pg16
+      - image: amazon/dynamodb-local:1.22.0
+      - image: trinodb/trino:403
+    steps:
+      - checkout
+      - run: sleep 300
